@@ -51,13 +51,13 @@ function reverse(str){
     for (let i = totalItems ; i >= 0; i--){
         backwards.push(str[i])
     }
-    console.log(backwards)
+    //console.log(backwards)
     return backwards.join("")
 }
 
 answer = reverse("hello im adam")
 
-console.log(answer)
+//console.log(answer)
 
 function simpleReverse(str){
     return str.split("").reverse().join("")
@@ -65,4 +65,45 @@ function simpleReverse(str){
 
 answerTwo = simpleReverse("hello im eric")
 
-console.log(answerTwo)
+//console.log(answerTwo)
+
+
+
+// Merge sorted arrays.
+
+
+function mergeSortedArrays(arr1, arr2){
+    const mergedArr = []
+
+    let arr1Item = arr1[0]
+    let arr2Item = arr2[0]
+    let i = 1
+    let j = 1
+
+    // Check input is correct
+
+    if (arr1.length === 0){
+        return arr2
+    }
+    if (arr2.length === 0){
+        return arr1
+    }
+
+    while (arr1Item || arr2Item ){
+        if (!arr2Item || arr1Item < arr2Item) {
+            mergedArr.push(arr1Item)
+            arr1Item = arr1[i]
+            i++
+        } else {
+            mergedArr.push(arr2Item)
+            arr2Item = arr2[j]
+            j++
+        }
+    }
+
+    return mergedArr
+}
+
+answerThree = mergeSortedArrays([1,2,3,4], [5,6,7,8])
+
+console.log(answerThree)
