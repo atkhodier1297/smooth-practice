@@ -27,5 +27,42 @@ strings.splice(2, 0, "alien") // O(n)
 
 //console.log(strings)
 
+
+
+
 // Static vs Dynamic Arrays
 
+// Static arrays have limited space with allocated memory.
+// Dynamic array is a copy of that static array but with more memory allocated in a separate area. 
+// In JS and Python they work like Dynamic arrays immediately. They have auto resizing.
+
+
+
+// Reverse a string.
+
+function reverse(str){
+    // check input is a string
+    if (!str || str.length < 2 || typeof str !== "string"){
+        return "wrong type"
+    }
+    const backwards = []
+    const totalItems = str.length -1
+
+    for (let i = totalItems ; i >= 0; i--){
+        backwards.push(str[i])
+    }
+    console.log(backwards)
+    return backwards.join("")
+}
+
+answer = reverse("hello im adam")
+
+console.log(answer)
+
+function simpleReverse(str){
+    return str.split("").reverse().join("")
+}
+
+answerTwo = simpleReverse("hello im eric")
+
+console.log(answerTwo)
